@@ -1,0 +1,30 @@
+first we maintain our testcases in the excel file
+in the format of testcaseid, description, package name, class name
+and status
+why we are passing status-because with the help of status
+we will drive/testcases our test cases
+there is a concept of base package in base package we are 
+handling the browser and handling the properties file
+for testscripts we have maintained a package in that 
+package we are maintaining all the testscripts
+for reusable/common pages we have use the concept of
+page object model, so what is page object model its a 
+design pattern its a way of working we are defining
+operation as per the page architecture means if there
+are multiple sections on the page we will design the
+method as per the sections on the page and we are calling
+that methods as per the requirement in the testcase
+and for the comparison between expected and actual result
+we are using assertions.
+and we have designed some utilities as well like screenshot
+capture, logs capture, drop down handling,excel file handling
+for logs capturing we are using the apache log4j librarry
+and there is a concept of trigger class that will the
+trigger the whole framework and after that you need to
+explain all the responsibilites of trigger class 
+and for the locators we are maintaining in the properties file
+and all the jars we are passing using pom.xml to our maven project
+and all the exe of the browsers we are maintaining in the browser
+folder and test cases excel file we are attaching with the project.
+and for source code management we are using GitHub
+and for the build tool we are using maven 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]">
+  <test thread-count="5" name="Command line test 8ea89e26-318d-4259-9d44-f286e54160d9(failed)">
+    <classes>
+      <class name="org.testing.TestScripts.TC7">
+        <methods>
+          <include name="close_base"/>
+          <include name="launch_base"/>
+          <include name="testcase6"/>
+        </methods>
+      </class> <!-- org.testing.TestScripts.TC7 -->
+      <class name="org.testing.TestScripts.TC4">
+        <methods>
+          <include name="close_base"/>
+          <include name="launch_base"/>
+          <include name="testcase4"/>
+        </methods>
+      </class> <!-- org.testing.TestScripts.TC4 -->
+    </classes>
+  </test> <!-- Command line test 8ea89e26-318d-4259-9d44-f286e54160d9(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

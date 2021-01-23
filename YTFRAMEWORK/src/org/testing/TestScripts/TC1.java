@@ -1,94 +1,54 @@
 package org.testing.TestScripts;
-
+import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testing.assertions.userAssert;
+import org.testing.pages.Login;
+import org.testing.pages.Logout;
+import org.testing.utilities.LogsCapture;
+import org.testing.utilities.Screenshot;
 import org.testng.annotations.Test;
 
+import Base.base; 
 
-public class TC1 {
+public class TC1 extends base 
+{
 	
-	ChromeDriver driver;
-	
-	@BeforeMethod
-	public void launch()
-	{
-		
-		System.setProperty("webdriver.chrome.driver", "../selenium/chromedriver.exe");
-		driver=new ChromeDriver();
-		String weburl="https://www.youtube.com/";
-		driver.get(weburl);
-		driver.manage().window().maximize();
-		System.out.println("browser launched");
-	}
-
 	
 	@Test
-	public void testcase1()  throws InterruptedException
+	public  void testcase1()  throws InterruptedException, IOException
 	{
 		
-		Thread.sleep(4000);
+		LogsCapture lc= new LogsCapture();
+		Login l = new Login(driver,pr);
+		l.signin("demo93910@gmail.com", "demo@1234");
 		
-		WebElement sign_in=driver.findElement(By.xpath("//paper-button[@aria-label='Sign in'][@class='style-scope ytd-button-renderer style-suggestive size-default']"));
-		sign_in.click();
+		userAssert ua = new userAssert();
 		
-		Thread.sleep(4000);
+		String current_url=driver.getCurrentUrl();
 		
-		WebElement acc_button=driver.findElement(By.xpath("//input[@type='email'][@aria-label='Email or phone']"));
-		acc_button.click();
-		acc_button.sendKeys("demo93910@gmail.com");
+		ua.checkurl(current_url, "www.youtube.com");
 		
-		Thread.sleep(4000);
-		
-		WebElement acc_next_button=driver.findElement(By.xpath("//div[@class='VfPpkd-RLmnJb']"));
-		acc_next_button.click();
-		
-		Thread.sleep(4000);
-		
-		WebElement password=driver.findElement(By.xpath("//input[@type='password'][@name='password']"));
-		password.sendKeys("demo@1234");
-		
-		Thread.sleep(4000);
-		
-		WebElement pass_next_button=driver.findElement(By.xpath("//div[@id='passwordNext'][@jsname='Njthtb']"));
-		pass_next_button.click();
-		
-		
+		Thread.sleep(3000);
 		//click on trending in the menu 
-		
-		Thread.sleep(4000);
-		
-		WebElement trending=driver.findElement(By.xpath("//a[@title='Trending'][@id='endpoint']"));
+	    System.out.println("TEST CASE 1 Started");
+		WebElement trending=driver.findElement(By.xpath(pr.getProperty("trending_button")));
+		Thread.sleep(3000);
 		trending.click();
-		
-		//img[@alt='Avatar image'][@id='img']
-		
-		//button[@id='avatar-btn'][@aria-haspopup='true']
-		
-		Thread.sleep(9000);
-	
-		WebElement user_menu=driver.findElement(By.xpath("//button[@id='avatar-btn'][@aria-haspopup='true']"));
-		user_menu.click();
-		
-		Thread.sleep(4000);
-		
-		WebElement logout=driver.findElement(By.xpath("//a[@href='/logout'][@id='endpoint']"));
-		logout.click();
-	
 		System.out.println("clicked on trending");
+		
+		
+		Screenshot s=new Screenshot();
+		s.takescreenshot(driver, "E://SELENIUM SCREESHOT/1.png");
+ 
+		lc.takeLogs("Test Case passed for TC1", "TC1");
+		Thread.sleep(2000);
+		
+		Thread.sleep(3000);
+	     Logout m = new Logout(driver,pr);
+	     m.logout();
+	
 	}
 	
-	
-	@AfterMethod
-	public void close() throws InterruptedException
-	{
-		Thread.sleep(9000);
-		driver.close();
-		System.out.println("Test Case 1 Completed");
-		System.out.println(" ");
-		System.out.println("====================================================================");
-	}
 }

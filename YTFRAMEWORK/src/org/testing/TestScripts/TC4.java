@@ -1,107 +1,69 @@
 package org.testing.TestScripts;
 
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.interactions.Actions;
+import org.testing.assertions.userAssert;
+import org.testing.pages.Login;
+import org.testing.pages.Logout;
+import org.testing.pages.VideoPlay;
+import org.testing.utilities.LogsCapture;
+import org.testing.utilities.Screenshot;
 import org.testng.annotations.Test;
 
+import Base.base;
 
-public class TC4 {
+
+public class TC4 extends base {
 	
-	ChromeDriver driver;
 	
-	@BeforeMethod
-	public void launch()
-	{
-		
-		System.setProperty("webdriver.chrome.driver", "../selenium/chromedriver.exe");
-		driver=new ChromeDriver();
-		String weburl="https://www.youtube.com/";
-		driver.get(weburl);
-		driver.manage().window().maximize();
-		System.out.println("browser launched");
-	}
 
 	
 	@Test
-	public void testcase4()  throws InterruptedException
+	public void testcase4()  throws InterruptedException, IOException
 	{
 		
-		Thread.sleep(4000);
-		
-		WebElement sign_in=driver.findElement(By.xpath("//paper-button[@aria-label='Sign in'][@class='style-scope ytd-button-renderer style-suggestive size-default']"));
-		sign_in.click();
-		
-		Thread.sleep(4000);
-		
-		WebElement acc_button=driver.findElement(By.xpath("//input[@type='email'][@aria-label='Email or phone']"));
-		acc_button.click();
-		acc_button.sendKeys("demo93910@gmail.com");
+		LogsCapture lc= new LogsCapture();
+		Login l = new Login(driver,pr);
+		l.signin("demo93910@gmail.com", "demo@1234");
 		
 		Thread.sleep(4000);
+		VideoPlay vp= new VideoPlay(driver, pr);
+		vp.play_video();
 		
-		WebElement acc_next_button=driver.findElement(By.xpath("//div[@class='VfPpkd-RLmnJb']"));
-		acc_next_button.click();
+		Thread.sleep(2000);
 		
-		Thread.sleep(4000);
+        userAssert ua = new userAssert();
 		
-		WebElement password=driver.findElement(By.xpath("//input[@type='password'][@name='password']"));
-		password.sendKeys("demo@1234");
+		String current_url=driver.getCurrentUrl();
 		
-		Thread.sleep(4000);
+		ua.checkurl(current_url, "www.youtube.com");
 		
-		WebElement pass_next_button=driver.findElement(By.xpath("//div[@id='passwordNext'][@jsname='Njthtb']"));
-		pass_next_button.click();
+	/*===================== TEST CASE==============================*/
+		 System.out.println("TEST CASE 4 Started");
+		Thread.sleep(5000);
 		
-		
-		//click on trending in the menu 
-		
-		Thread.sleep(4000);
-		
-		WebElement trending=driver.findElement(By.xpath("//a[@title='Trending'][@id='endpoint']"));
-		trending.click();
-		
-		Thread.sleep(9000);
-		
-		WebElement video_play=driver.findElement(By.xpath("//a[@id='video-title'][@title='WEDDING DURING LOCKDOWN || Rachit Rojha']"));
-		video_play.click();
-		
-		Thread.sleep(3000);
-		
-		WebElement video_like=driver.findElement(By.xpath("//*[@id='top-level-buttons']/ytd-toggle-button-renderer[1]/a"));
+		WebElement video_like=driver.findElement(By.xpath(pr.getProperty("video_like_button")));
 		video_like.click();
 		
+		Screenshot s=new Screenshot();
+		s.takescreenshot(driver, "E://SELENIUM SCREESHOT/4.png");
 		
+/*============================TEST CASE END============================*/
 		
-		//img[@alt='Avatar image'][@id='img']
+		lc.takeLogs("Test Case passed for TC4", "TC4");
+		Thread.sleep(2000);
 		
-		//button[@id='avatar-btn'][@aria-haspopup='true']
-		
-		Thread.sleep(9000);
-	
-		WebElement user_menu=driver.findElement(By.xpath("//button[@id='avatar-btn'][@aria-haspopup='true']"));
-		user_menu.click();
-		
-		Thread.sleep(4000);
-		
-		WebElement logout=driver.findElement(By.xpath("//a[@href='/logout'][@id='endpoint']"));
-		logout.click();
+	     Logout m = new Logout(driver,pr);
+	     m.logout();
+
 	
 		System.out.println("video played and like");
 	}
 	
-	
-	@AfterMethod
-	public void close() throws InterruptedException
-	{
-		Thread.sleep(9000);
-		driver.close();
-		System.out.println("Test Case 4 completed");
-		System.out.println(" ");
-		System.out.println("====================================================================");
-	}
+
 	
 }

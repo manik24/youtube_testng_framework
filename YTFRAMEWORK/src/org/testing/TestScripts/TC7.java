@@ -4,119 +4,70 @@ package org.testing.TestScripts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testing.assertions.userAssert;
+import org.testing.pages.Login;
+import org.testing.pages.Logout;
+import org.testing.pages.VideoPlay;
+import org.testing.utilities.LogsCapture;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import Base.base;
 
-public class TC7 {
-	
-	ChromeDriver driver;
-	
-	@BeforeMethod
-	public void launch()
-	{
-		System.setProperty("webdriver.chrome.driver", "../selenium/chromedriver.exe");
-		driver=new ChromeDriver();
-		String weburl="https://www.youtube.com/";
-		driver.get(weburl);
-		driver.manage().window().maximize();
-		System.out.println("browser launched");
-	}
 
+public class TC7 extends base
+{
 	
 	@Test
 	public void testcase6()  throws InterruptedException
 	{
+
+		LogsCapture lc= new LogsCapture();
+		Login l = new Login(driver,pr);
+		l.signin("demo93910@gmail.com", "demo@1234");
 		
-		Thread.sleep(4000);
+		VideoPlay vp= new VideoPlay(driver, pr);
+		vp.play_video();
 		
-		WebElement sign_in=driver.findElement(By.xpath("//paper-button[@aria-label='Sign in'][@class='style-scope ytd-button-renderer style-suggestive size-default']"));
-		sign_in.click();
+		Thread.sleep(2000);
 		
-		Thread.sleep(4000);
+        userAssert ua = new userAssert();
 		
-		WebElement acc_button=driver.findElement(By.xpath("//input[@type='email'][@aria-label='Email or phone']"));
-		acc_button.click();
-		acc_button.sendKeys("demo93910@gmail.com");
+		String current_url=driver.getCurrentUrl();
 		
-		Thread.sleep(4000);
-		
-		WebElement acc_next_button=driver.findElement(By.xpath("//div[@class='VfPpkd-RLmnJb']"));
-		acc_next_button.click();
-		
-		Thread.sleep(4000);
-		
-		WebElement password=driver.findElement(By.xpath("//input[@type='password'][@name='password']"));
-		password.sendKeys("demo@1234");
-		
-		Thread.sleep(4000);
-		
-		WebElement pass_next_button=driver.findElement(By.xpath("//div[@id='passwordNext'][@jsname='Njthtb']"));
-		pass_next_button.click();
-		
-		
-		//click on trending in the menu 
-		
-		Thread.sleep(4000);
-		
-		WebElement trending=driver.findElement(By.xpath("//a[@title='Trending'][@id='endpoint']"));
-		trending.click();
-		
-		Thread.sleep(9000);
-		
-		//play the youtube video
-		
-		WebElement video_play=driver.findElement(By.xpath("//a[@id='video-title'][@title='WEDDING DURING LOCKDOWN || Rachit Rojha']"));
-		video_play.click();
-		
-		Thread.sleep(7000);
-		
-		
+		ua.checkurl(current_url, "www.youtube.com");
+			
+		/*===================== TEST CASE==============================*/
 		
 		Thread.sleep(5000);
 		
 		//add to watch later  on  the youtube video 
 		
-		WebElement save_playlist_button=driver.findElement(By.xpath("//button[@aria-label='Save to playlist'][@id='button']"));
+		WebElement save_playlist_button=driver.findElement(By.xpath(pr.getProperty("save_playlist")));
 		save_playlist_button.click();
 		
 		Thread.sleep(2000);
 		
-		WebElement watch_later_checkbox=driver.findElement(By.xpath("//yt-formatted-string[text()='Watch later'][@title='Watch later']"));
+		WebElement watch_later_checkbox=driver.findElement(By.xpath(pr.getProperty("watch_later_checkbox_button")));
 		watch_later_checkbox.click();
 		
 		Thread.sleep(3000);
 		
-		WebElement close_watch_later=driver.findElement(By.xpath("//yt-icon[@icon='close']"));
+		WebElement close_watch_later=driver.findElement(By.xpath(pr.getProperty("close_watch_later_button")));
 		close_watch_later.click();
 		
 		Thread.sleep(4000);
+		/*============================TEST CASE END============================*/
 		
-	
-	
-	
-		Thread.sleep(9000);
-	
-		WebElement user_menu=driver.findElement(By.xpath("//button[@id='avatar-btn'][@aria-haspopup='true']"));
-		user_menu.click();
+		lc.takeLogs("Test Case passed for TC7", "TC7");
+		Thread.sleep(2000);
 		
-		Thread.sleep(4000);
+	     Logout m = new Logout(driver,pr);
+	     m.logout();
 		
-		WebElement logout=driver.findElement(By.xpath("//a[@href='/logout'][@id='endpoint']"));
-		logout.click();
-	
 		System.out.println("video added to watch later");
 	}
 	
-	
-	@AfterMethod
-	public void close() throws InterruptedException
-	{
-		Thread.sleep(9000);
-		driver.close();
-		System.out.println("Test Case 7 completed");
-		System.out.println(" ");
-		System.out.println("====================================================================");
-	}
+
 }

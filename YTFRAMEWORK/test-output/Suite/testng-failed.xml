@@ -5,11 +5,18 @@
     <classes>
       <class name="org.testing.TestScripts.TC5">
         <methods>
-          <include name="launch"/>
           <include name="testcase5"/>
-          <include name="close"/>
+          <include name="close_base"/>
+          <include name="launch_base"/>
         </methods>
       </class> <!-- org.testing.TestScripts.TC5 -->
+      <class name="org.testing.TestScripts.TC3">
+        <methods>
+          <include name="testcase3"/>
+          <include name="close_base"/>
+          <include name="launch_base"/>
+        </methods>
+      </class> <!-- org.testing.TestScripts.TC3 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

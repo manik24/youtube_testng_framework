@@ -1,123 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="693258" started-at="2021-01-05T17:56:57Z" finished-at="2021-01-05T18:08:30Z">
+  <suite name="Suite1" duration-ms="401404" started-at="2021-01-23T20:33:11Z" finished-at="2021-01-23T20:39:53Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="693258" started-at="2021-01-05T17:56:57Z" finished-at="2021-01-05T18:08:30Z">
-      <class name="org.testing.TestScripts.TC8">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC8@5622fdf]" name="launch" is-config="true" duration-ms="11194" started-at="2021-01-05T18:07:17Z" finished-at="2021-01-05T18:07:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase8()[pri:0, instance:org.testing.TestScripts.TC8@5622fdf]" name="testcase8" duration-ms="48178" started-at="2021-01-05T18:07:28Z" finished-at="2021-01-05T18:08:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase8 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC8@5622fdf]" name="close" is-config="true" duration-ms="13367" started-at="2021-01-05T18:08:16Z" finished-at="2021-01-05T18:08:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- org.testing.TestScripts.TC8 -->
+    <test name="Command line test 41e52408-ba4c-47d0-87b9-ad9dc313c668" duration-ms="401404" started-at="2021-01-23T20:33:11Z" finished-at="2021-01-23T20:39:53Z">
       <class name="org.testing.TestScripts.TC7">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC7@6093dd95]" name="launch" is-config="true" duration-ms="13001" started-at="2021-01-05T18:05:32Z" finished-at="2021-01-05T18:05:45Z">
+        <test-method status="PASS" signature="launch_base()[pri:0, instance:org.testing.TestScripts.TC7@26ba2a48]" name="launch_base" is-config="true" duration-ms="10473" started-at="2021-01-23T20:37:59Z" finished-at="2021-01-23T20:38:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase6()[pri:0, instance:org.testing.TestScripts.TC7@6093dd95]" name="testcase6" duration-ms="78725" started-at="2021-01-05T18:05:45Z" finished-at="2021-01-05T18:07:04Z">
+        </test-method> <!-- launch_base -->
+        <test-method status="PASS" signature="testcase6()[pri:0, instance:org.testing.TestScripts.TC7@26ba2a48]" name="testcase6" duration-ms="89806" started-at="2021-01-23T20:38:10Z" finished-at="2021-01-23T20:39:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase6 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC7@6093dd95]" name="close" is-config="true" duration-ms="13126" started-at="2021-01-05T18:07:04Z" finished-at="2021-01-05T18:07:17Z">
+        <test-method status="PASS" signature="close_base()[pri:0, instance:org.testing.TestScripts.TC7@26ba2a48]" name="close_base" is-config="true" duration-ms="13331" started-at="2021-01-23T20:39:40Z" finished-at="2021-01-23T20:39:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- close -->
+        </test-method> <!-- close_base -->
       </class> <!-- org.testing.TestScripts.TC7 -->
       <class name="org.testing.TestScripts.TC4">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC4@6a41eaa2]" name="launch" is-config="true" duration-ms="13272" started-at="2021-01-05T18:00:38Z" finished-at="2021-01-05T18:00:52Z">
+        <test-method status="PASS" signature="launch_base()[pri:0, instance:org.testing.TestScripts.TC4@42d3bd8b]" name="launch_base" is-config="true" duration-ms="10011" started-at="2021-01-23T20:36:14Z" finished-at="2021-01-23T20:36:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase4()[pri:0, instance:org.testing.TestScripts.TC4@6a41eaa2]" name="testcase4" duration-ms="61052" started-at="2021-01-05T18:00:52Z" finished-at="2021-01-05T18:01:53Z">
+        </test-method> <!-- launch_base -->
+        <test-method status="PASS" signature="testcase4()[pri:0, instance:org.testing.TestScripts.TC4@42d3bd8b]" name="testcase4" duration-ms="81749" started-at="2021-01-23T20:36:24Z" finished-at="2021-01-23T20:37:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase4 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC4@6a41eaa2]" name="close" is-config="true" duration-ms="13357" started-at="2021-01-05T18:01:53Z" finished-at="2021-01-05T18:02:06Z">
+        <test-method status="PASS" signature="close_base()[pri:0, instance:org.testing.TestScripts.TC4@42d3bd8b]" name="close_base" is-config="true" duration-ms="13317" started-at="2021-01-23T20:37:46Z" finished-at="2021-01-23T20:37:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- close -->
+        </test-method> <!-- close_base -->
       </class> <!-- org.testing.TestScripts.TC4 -->
       <class name="org.testing.TestScripts.TC3">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC3@685cb137]" name="launch" is-config="true" duration-ms="13493" started-at="2021-01-05T17:59:24Z" finished-at="2021-01-05T17:59:38Z">
+        <test-method status="PASS" signature="launch_base()[pri:0, instance:org.testing.TestScripts.TC3@dfd3711]" name="launch_base" is-config="true" duration-ms="10398" started-at="2021-01-23T20:34:47Z" finished-at="2021-01-23T20:34:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase3()[pri:0, instance:org.testing.TestScripts.TC3@685cb137]" name="testcase3" duration-ms="47421" started-at="2021-01-05T17:59:38Z" finished-at="2021-01-05T18:00:25Z">
+        </test-method> <!-- launch_base -->
+        <test-method status="PASS" signature="testcase3()[pri:0, instance:org.testing.TestScripts.TC3@dfd3711]" name="testcase3" duration-ms="63407" started-at="2021-01-23T20:34:57Z" finished-at="2021-01-23T20:36:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase3 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC3@685cb137]" name="close" is-config="true" duration-ms="13354" started-at="2021-01-05T18:00:25Z" finished-at="2021-01-05T18:00:38Z">
+        <test-method status="PASS" signature="close_base()[pri:0, instance:org.testing.TestScripts.TC3@dfd3711]" name="close_base" is-config="true" duration-ms="13328" started-at="2021-01-23T20:36:01Z" finished-at="2021-01-23T20:36:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- close -->
+        </test-method> <!-- close_base -->
       </class> <!-- org.testing.TestScripts.TC3 -->
-      <class name="org.testing.TestScripts.TC6">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC6@6d4b1c02]" name="launch" is-config="true" duration-ms="11313" started-at="2021-01-05T18:03:44Z" finished-at="2021-01-05T18:03:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase6()[pri:0, instance:org.testing.TestScripts.TC6@6d4b1c02]" name="testcase6" duration-ms="84021" started-at="2021-01-05T18:03:55Z" finished-at="2021-01-05T18:05:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase6 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC6@6d4b1c02]" name="close" is-config="true" duration-ms="13138" started-at="2021-01-05T18:05:19Z" finished-at="2021-01-05T18:05:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- org.testing.TestScripts.TC6 -->
-      <class name="org.testing.TestScripts.TC5">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC5@7cd62f43]" name="launch" is-config="true" duration-ms="10503" started-at="2021-01-05T18:02:06Z" finished-at="2021-01-05T18:02:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase5()[pri:0, instance:org.testing.TestScripts.TC5@7cd62f43]" name="testcase5" duration-ms="73715" started-at="2021-01-05T18:02:17Z" finished-at="2021-01-05T18:03:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase5 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC5@7cd62f43]" name="close" is-config="true" duration-ms="13359" started-at="2021-01-05T18:03:30Z" finished-at="2021-01-05T18:03:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- org.testing.TestScripts.TC5 -->
-      <class name="org.testing.TestScripts.TC2">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC2@6a4f787b]" name="launch" is-config="true" duration-ms="10826" started-at="2021-01-05T17:58:12Z" finished-at="2021-01-05T17:58:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase2()[pri:0, instance:org.testing.TestScripts.TC2@6a4f787b]" name="testcase2" duration-ms="47481" started-at="2021-01-05T17:58:23Z" finished-at="2021-01-05T17:59:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase2 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC2@6a4f787b]" name="close" is-config="true" duration-ms="13369" started-at="2021-01-05T17:59:11Z" finished-at="2021-01-05T17:59:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- org.testing.TestScripts.TC2 -->
       <class name="org.testing.TestScripts.TC1">
-        <test-method status="PASS" signature="launch()[pri:0, instance:org.testing.TestScripts.TC1@604ed9f0]" name="launch" is-config="true" duration-ms="15766" started-at="2021-01-05T17:56:57Z" finished-at="2021-01-05T17:57:12Z">
+        <test-method status="PASS" signature="launch_base()[pri:0, instance:org.testing.TestScripts.TC1@38082d64]" name="launch_base" is-config="true" duration-ms="13285" started-at="2021-01-23T20:33:12Z" finished-at="2021-01-23T20:33:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="testcase1()[pri:0, instance:org.testing.TestScripts.TC1@604ed9f0]" name="testcase1" duration-ms="46795" started-at="2021-01-05T17:57:12Z" finished-at="2021-01-05T17:57:59Z">
+        </test-method> <!-- launch_base -->
+        <test-method status="PASS" signature="testcase1()[pri:0, instance:org.testing.TestScripts.TC1@38082d64]" name="testcase1" duration-ms="68913" started-at="2021-01-23T20:33:25Z" finished-at="2021-01-23T20:34:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="PASS" signature="close()[pri:0, instance:org.testing.TestScripts.TC1@604ed9f0]" name="close" is-config="true" duration-ms="13366" started-at="2021-01-05T17:57:59Z" finished-at="2021-01-05T17:58:12Z">
+        <test-method status="PASS" signature="close_base()[pri:0, instance:org.testing.TestScripts.TC1@38082d64]" name="close_base" is-config="true" duration-ms="13330" started-at="2021-01-23T20:34:34Z" finished-at="2021-01-23T20:34:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- close -->
+        </test-method> <!-- close_base -->
       </class> <!-- org.testing.TestScripts.TC1 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Command line test 41e52408-ba4c-47d0-87b9-ad9dc313c668 -->
+  </suite> <!-- Suite1 -->
 </testng-results>
